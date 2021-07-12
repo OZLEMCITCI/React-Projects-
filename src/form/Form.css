@@ -1,0 +1,17 @@
+.container form{
+margin-top: 3rem;
+
+
+}
+
+.form-control{
+    background-color: transparent;
+    color: white;
+    border:0;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 0;
+      box-shadow: none !important;
+   
+
+}
+
