@@ -11,9 +11,9 @@ function App() {
 
   const { weather, sys, main, name } = weatherResponse;
   const { description, id } = weather;
-  const [goster, setgoster] = useState(true)
+  const [goster, setgoster] = useState(false)
 
-  const API_KEY = "49354479869ae18d7dfbe48bbd9eced7";
+ 
 
   const [city, setcity] = useState("");
   const [country, setcountry] = useState("")
@@ -26,11 +26,12 @@ const [city1, setcity1] = useState("");
     event.preventDefault();
     setcity1(city);
     setcountry1(country);
+     const API_KEY = "49354479869ae18d7dfbe48bbd9eced7";
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city1},Turkey&appid=${API_KEY}`).then((res) => { if (res.status >= 200 && res.status < 299) { return res.json() } else { sethata(true) } }).then((data) => setweatherResponse(data));
     
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city1},${country1}&appid=${API_KEY}`).then((res) => { if (res.status >= 200 && res.status < 299) { return res.json() } else { sethata(true) } }).then((data) => setweatherResponse(data));
-    
-    
+    setgoster(true);
     console.log(city1);
+    console.log(country1)
     
   }
 
@@ -72,13 +73,7 @@ const [city1, setcity1] = useState("");
         </div>
       </form>
 
-
-     
-     
-      
-
-
-       {!hata &&  <Weather city={name}
+       {!hata && goster && <Weather city={name}
         country={sys.country}
         temp={main.temp}
         min={main.temp_min}
