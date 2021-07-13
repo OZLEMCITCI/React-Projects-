@@ -9,7 +9,7 @@ const Form = (props) => {
                 
 
                 <div className="col-md-3">
-                    <input type="text" className="form-control" name="country" autoComplete="off" placeholder="Coutry"/>
+                    <input type="text" className="form-control" autoComplete="off" name="country" placeholder="Coutry"/>
                 </div>
 
                 <div className="col-md-3 mt-md-0 text-md-left">
