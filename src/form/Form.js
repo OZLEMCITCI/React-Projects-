@@ -1,6 +1,9 @@
 import React from 'react'
 import "./Form.css"
 
+
+//bunu kullanmadim burdan da olmadi bende app.js den formu olusturmaya karar verdim
+
 const Form = (props) => {
     return (
         <div className="container" >
