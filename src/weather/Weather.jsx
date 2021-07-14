@@ -2,7 +2,7 @@ import React from 'react'
 import"./weather.css"
 
 const Weather = (probs) => {
-    //const [icon, seticon] = useState("")
+    
     const weatericon = function (rangeId) {
 
         switch (true) {
@@ -41,7 +41,7 @@ const Weather = (probs) => {
 
 
     return (
-        <div className="contanier mt-3">
+        <div className="contanier text-white mt-3">
             <div className="cards">
                 <h1>{probs.city},{probs.country }</h1>
                 <h5 className="py-4">

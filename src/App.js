@@ -8,26 +8,29 @@ import "./form/Form.css"
 
 function App() {
   const [weatherResponse, setweatherResponse] = useState({ weather: "", sys: "", main: "", name: "" });
-
-  const { weather, sys, main, name } = weatherResponse;
-  const { description, id } = weather;
   const [goster, setgoster] = useState(false)
-
- 
 
   const [city, setcity] = useState("");
   const [country, setcountry] = useState("")
 
-const [city1, setcity1] = useState("");
+  const [city1, setcity1] = useState("");
   const [country1, setcountry1] = useState("")
   const [hata, sethata] = useState(false)
+
+  const { weather, sys, main, name } = weatherResponse;
+  const { description, id } = weather;
+
+
+  
+ 
+
   
   function updateInput(event) {
     event.preventDefault();
     setcity1(city);
     setcountry1(country);
      const API_KEY = "49354479869ae18d7dfbe48bbd9eced7";
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city1},Turkey&appid=${API_KEY}`).then((res) => { if (res.status >= 200 && res.status < 299) { return res.json() } else { sethata(true) } }).then((data) => setweatherResponse(data));
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city1},$Turkey&appid=${API_KEY}`).then((res) => { if (res.status >= 200 && res.status < 299) { return res.json() } else { sethata(true) }}).then((data) => setweatherResponse(data));
     
     setgoster(true);
     console.log(city1);
@@ -72,8 +75,8 @@ const [city1, setcity1] = useState("");
           </div>
         </div>
       </form>
-
-       {!hata && goster && <Weather city={name}
+      <div className="m-5 ">
+        {!hata && goster && <Weather city={name}
         country={sys.country}
         temp={main.temp}
         min={main.temp_min}
@@ -81,6 +84,9 @@ const [city1, setcity1] = useState("");
         description={description}
         id={id}
         /> }
+       </div>
+       
+        
 
       
       
