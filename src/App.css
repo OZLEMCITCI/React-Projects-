@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+form {
+  margin-top: 3rem;
+}
+
+form input[name="city"],
+form input[name="country"] {
+  background-color: transparent !important;
+  color: white;
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+  border-radius: 0; 
+}
+
+form input::-webkit-input-placeholder{
+  color:white !important;
+}
+

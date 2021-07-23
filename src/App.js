@@ -4,23 +4,23 @@ import Weather from './weather/Weather.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import  "weather-icons/css/weather-icons.min.css";
 import React, { useState, useEffect } from 'react';
-import "./form/Form.css"
+
 
 function App() {
   const [weatherResponse, setweatherResponse] = useState({ weather: "", sys: "", main: "", name: "" });
   const [goster, setgoster] = useState(false)
 
-  const [city, setcity] = useState("");
-  const [country, setcountry] = useState("")
+  // const [city, setcity] = useState("");
+  // const [country, setcountry] = useState("")
 
-  const [city1, setcity1] = useState("");
-  const [country1, setcountry1] = useState("")
+  // const [city1, setcity1] = useState("");
+  // const [country1, setcountry1] = useState("")
   const [hata, sethata] = useState(false)
 
   const { weather, sys, main, name } = weatherResponse;
   const { description, id } = weather;
 
-
+  
   
  
 
@@ -76,7 +76,7 @@ function App() {
         </div>
       </form>
       <div className="m-5 ">
-        {!hata && goster && <Weather city={name}
+        {!hata&&goster&& <Weather city={name}
         country={sys.country}
         temp={main.temp}
         min={main.temp_min}

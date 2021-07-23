@@ -1,47 +1,40 @@
 import React from 'react'
 import "./Form.css"
 
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from "yup"
+import Textfield from "@me"
 
 //bunu kullanmadim burdan da olmadi bende app.js den formu olusturmaya karar verdim
 
+const info = () => (
+  <div className="">
+    <Form >
+      <div className="row">
+        <div className="col-4">
+          <Field
+            component={TextField}
+        />
+        </div>
+
+
+      </div>
+
+  </Form>
+  </div>
+  
+);
+
 const Form = (props) => {
     return (
-        <div className="container" >
-          <form onSubmit={props.updateInput}>
+      <Formik
+        initialValues={{ city: "", country="" }}
+        validationSchema={{city: Yup.string().required("Please provide a city name"),
+          country: Yup.string().required("Please provide the country name"),
+        }}
+        component={}
         
-        <div className="row">
-          <div className="col-md-3 offset-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="City"
-              name="city"
-              autoComplete="off"
-              value={city}
-              onChange={(e)=>setcity(e.target.value)}
-              
-              
-            />
-          </div>
-          <div className="col-md-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Country"
-              name="country"
-              autoComplete="off"
-              value={country}
-              onChange={(e)=>setcountry(e.target.value)}
-              
-            />
-          </div>
-          <div className="col-md-3 mt-md-0 mt-2 text-md-left ">
-            <button type="submit" value="add song" className="btn btn-warning">Get Weather</button>
-          </div>
-        </div>
-      </form>
-            
-        </div>
+      />
     )
 }
 
